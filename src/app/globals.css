@@ -2,26 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.scroll-locked {
+  overflow: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.angled-div {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  top: -100px;
+  right: -100px;
+  background-color: #3498db;
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+  transform: rotate(-45deg);
+  cursor: pointer;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.angled-div > div {
+  transform: rotate(45deg);
+  position: absolute;
+  padding: 5px;
+  top: 32%;
 }
